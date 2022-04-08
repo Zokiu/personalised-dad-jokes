@@ -13,7 +13,7 @@ const DadJokeApi = ({ request }) => {
         console.log(response.data.value.joke);
         setJoke(response.data.value.joke);
       });
-  }, []);
+  }, [firstName, lastName, categories]);
 
   return (
     <div>
