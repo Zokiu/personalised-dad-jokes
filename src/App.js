@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import InputForm from "./componenets/InputForm";
+import DadJokeApi from "./componenets/DadJokeApi";
 
 function App() {
+  const [request, setRequest] = useState({
+    firstName: "",
+    lastName: "",
+    categories: "",
+  });
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Enter your first name and last name:</p>
       </header>
+      <InputForm setRequest={setRequest} />
+      {request.firstName === "" ? <p>loading</p> : <DadJokeApi request={request} />}
     </div>
   );
 }
