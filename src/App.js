@@ -15,7 +15,7 @@ function App() {
         <p>Enter your first name and last name:</p>
       </header>
       <InputForm setRequest={setRequest} />
-      {request.firstName === "" ? <p>loading</p> : <DadJokeApi request={request} />}
+      {request.firstName === "" ? <p>awaiting for user input</p> : <DadJokeApi request={request} />}
     </div>
   );
 }
